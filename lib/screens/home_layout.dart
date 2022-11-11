@@ -6,7 +6,54 @@ class HomeLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      drawer: Drawer(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              children: [
+                const UserAccountsDrawerHeader(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("assets/img/test.jpg"),
+                        fit: BoxFit.cover),
+                  ),
+                  accountName: Text("ali Hassan",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 255, 255, 255),
+                      )),
+                  accountEmail: Text("ali@yahoo.com"),
+                  currentAccountPictureSize: Size.square(99),
+                  currentAccountPicture: CircleAvatar(
+                      radius: 55,
+                      backgroundImage: AssetImage("assets/img/ali.jpg")),
+                ),
+                ListTile(
+                    title:const Text("Home"),
+                    leading:const Icon(Icons.home),
+                    onTap: () {}),
+                ListTile(
+                    title:const Text("My products"),
+                    leading:const Icon(Icons.add_shopping_cart),
+                    onTap: () {}),
+                ListTile(
+                    title:const Text("About"),
+                    leading:const Icon(Icons.help_center),
+                    onTap: () {}),
+                ListTile(
+                    title: const Text("Logout"),
+                    leading: const Icon(Icons.exit_to_app),
+                    onTap: () {}),
+              ],
+            ),
+            Container(
+              margin: const EdgeInsets.only(bottom: 12),
+              child: const Text("Developed by Islam Gamal © 2022",
+                  style: TextStyle(fontSize: 16)),
+            )
+          ],
+        ),
+      ),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 76, 141, 95),
         title: const Text("Home"),
