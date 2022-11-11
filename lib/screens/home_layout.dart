@@ -15,18 +15,22 @@ class HomeLayout extends StatelessWidget {
                 const UserAccountsDrawerHeader(
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("assets/img/test.jpg"),
+                        image: AssetImage("assets/images/cat.jpg"),
                         fit: BoxFit.cover),
                   ),
-                  accountName: Text("ali Hassan",
+                  accountName: Text("Eslam Gamal",
                       style: TextStyle(
-                        color: Color.fromARGB(255, 255, 255, 255),
+                        color: Colors.black,
                       )),
-                  accountEmail: Text("ali@yahoo.com"),
+                  accountEmail: Text("elkurdieslam@gmail.com",
+                      style: TextStyle(
+                        color: Colors.black,
+                      )
+                  ),
                   currentAccountPictureSize: Size.square(99),
                   currentAccountPicture: CircleAvatar(
                       radius: 55,
-                      backgroundImage: AssetImage("assets/img/ali.jpg")),
+                      backgroundImage: AssetImage("assets/images/eslam.jpg")),
                 ),
                 ListTile(
                     title:const Text("Home"),
