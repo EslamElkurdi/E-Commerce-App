@@ -76,7 +76,6 @@ class RegisterScreen extends StatelessWidget {
                                       }
                                   )
                               );
-
                             },
                             child: const Text(
                               'sign in',
