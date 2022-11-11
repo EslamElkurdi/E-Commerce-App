@@ -1,5 +1,6 @@
-import 'package:e_commerce/shared/custom_text_field.dart';
 import 'package:flutter/material.dart';
+
+import '../shared/constants/constants.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -10,26 +11,25 @@ class LoginScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
-          children: const [
-            SizedBox(
+          children:   [
+            const SizedBox(
               height: 64.0,
             ),
-            MyTextField(
-                isPassword: false,
-                hintText: 'Please Enter your Email',
-                textInputType: TextInputType.emailAddress,
+            TextField(
+              keyboardType: TextInputType.emailAddress,
+              obscureText: false,
+              decoration: InputDecortion.copyWith(hintText: 'Please Enter Email',)
+          ),
+            const SizedBox(
+              height: 33.0,
             ),
-            SizedBox(
-              height: 35.0,
-            ),
-            MyTextField(
-              isPassword: true,
-              hintText: 'Please Enter Password',
-              textInputType: TextInputType.text,
-            ),
-          ],
+            TextField(
+                keyboardType: TextInputType.text,
+                obscureText: true,
+                decoration: InputDecortion.copyWith(hintText: 'Please Enter Password'),
         ),
-      ),
-    );
+    ]
+    ),
+      ));
   }
 }
