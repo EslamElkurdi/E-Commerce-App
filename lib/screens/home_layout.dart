@@ -6,6 +6,7 @@ class HomeLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 76, 141, 95),
         title: const Text("Home"),
@@ -26,8 +27,7 @@ class HomeLayout extends StatelessWidget {
                   ),
                   IconButton(
                       onPressed: () {},
-                      icon: const Icon(Icons.add_shopping_cart)
-                  ),
+                      icon: const Icon(Icons.add_shopping_cart)),
                 ],
               ),
               const Padding(
