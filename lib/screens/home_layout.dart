@@ -5,6 +5,18 @@ class HomeLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    var images = [
+      "assets/images/secondcat.jpg",
+      "assets/images/kit1.jpg",
+      "assets/images/kit2.jpg",
+      "assets/images/kit3.jpg",
+      "assets/images/kit4.jpg",
+      "assets/images/kit5.jpg",
+      "assets/images/kit6.jpg",
+      "assets/images/kit7.jpg",
+    ];
+
     return Scaffold(
       drawer: Drawer(
         child: Column(
@@ -25,24 +37,23 @@ class HomeLayout extends StatelessWidget {
                   accountEmail: Text("elkurdieslam@gmail.com",
                       style: TextStyle(
                         color: Colors.black,
-                      )
-                  ),
+                      )),
                   currentAccountPictureSize: Size.square(99),
                   currentAccountPicture: CircleAvatar(
                       radius: 55,
                       backgroundImage: AssetImage("assets/images/eslam.jpg")),
                 ),
                 ListTile(
-                    title:const Text("Home"),
-                    leading:const Icon(Icons.home),
+                    title: const Text("Home"),
+                    leading: const Icon(Icons.home),
                     onTap: () {}),
                 ListTile(
-                    title:const Text("My products"),
-                    leading:const Icon(Icons.add_shopping_cart),
+                    title: const Text("My products"),
+                    leading: const Icon(Icons.add_shopping_cart),
                     onTap: () {}),
                 ListTile(
-                    title:const Text("About"),
-                    leading:const Icon(Icons.help_center),
+                    title: const Text("About"),
+                    leading: const Icon(Icons.help_center),
                     onTap: () {}),
                 ListTile(
                     title: const Text("Logout"),
@@ -90,41 +101,41 @@ class HomeLayout extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 22),
+        padding: const EdgeInsets.all(13.0),
         child: GridView.builder(
-            gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 3 / 2,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 33),
-            itemCount: 4,
+            itemCount: 8,
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(
                 onTap: () {},
                 child: GridTile(
                   footer: GridTileBar(
-// backgroundColor: Color.fromARGB(66, 73, 127, 110),
+                    backgroundColor: Colors.grey.withOpacity(0.6),
                     trailing: IconButton(
-                        color: Color.fromARGB(255, 62, 94, 70),
+                        color: Colors.black,
                         onPressed: () {},
-                        icon: Icon(Icons.add)),
-
-                    leading: Text("\$12.99"),
-
-                    title: Text(
-                      "",
+                        icon:const Icon(Icons.add)),
+                    leading: const Text(
+                      "\$12.99",
+                    ),
+                    title: const Text(
+                      "Cat",
+                      style: TextStyle(color: Colors.black),
                     ),
                   ),
-                  child: Stack(
-                      children: [
-                     Positioned(
+                  child: Stack(children: [
+                    Positioned(
                       top: -3,
                       bottom: -9,
                       right: 0,
                       left: 0,
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(55),
-                          child: Image.asset("assets/images/secondcat.jpg")),
+                          child: Image.asset(images[index])),
                     ),
                   ]),
                 ),
