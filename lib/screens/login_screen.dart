@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../shared/colors/colors.dart';
 import '../shared/constants/constants.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -28,6 +29,19 @@ class LoginScreen extends StatelessWidget {
                 obscureText: true,
                 decoration: InputDecortion.copyWith(hintText: 'Please Enter Password'),
         ),
+            const SizedBox(
+              height: 33.0,
+            ),
+            ElevatedButton(
+              onPressed: (){},
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(BTNgreen),
+                padding: MaterialStateProperty.all(EdgeInsets.all(12)),
+                shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
+              ),
+              child: Text("sign in", style: TextStyle(fontSize: 19),),
+            ),
+
     ]
     ),
       ));
