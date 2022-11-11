@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
 
 class MyTextField extends StatelessWidget {
-  const MyTextField({Key? key}) : super(key: key);
+
+  final bool isPassword;
+  final TextInputType textInputType;
+  final String hintText;
+
+  const MyTextField({super.key,
+    required this.isPassword,
+    required this.hintText,
+    required this.textInputType,
+});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-        keyboardType: TextInputType.text,
-        obscureText: true,
+        keyboardType: textInputType,
+        obscureText: isPassword,
         decoration: InputDecoration(
-          hintText: "Enter Your Password : ",
+          hintText: hintText,
           // To delete borders
           enabledBorder: OutlineInputBorder(
             borderSide: Divider.createBorderSide(context),),

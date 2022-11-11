@@ -1,3 +1,4 @@
+import 'package:e_commerce/shared/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -13,7 +14,19 @@ class LoginScreen extends StatelessWidget {
             SizedBox(
               height: 64.0,
             ),
-
+            MyTextField(
+                isPassword: false,
+                hintText: 'Please Enter your Email',
+                textInputType: TextInputType.emailAddress,
+            ),
+            SizedBox(
+              height: 35.0,
+            ),
+            MyTextField(
+              isPassword: true,
+              hintText: 'Please Enter Password',
+              textInputType: TextInputType.text,
+            ),
           ],
         ),
       ),
