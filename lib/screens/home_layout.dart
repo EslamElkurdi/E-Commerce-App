@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
 
+import '../models/item_model_cat.dart';
+
 class HomeLayout extends StatelessWidget {
   const HomeLayout({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
 
-    var images = [
-      "assets/images/secondcat.jpg",
-      "assets/images/kit1.jpg",
-      "assets/images/kit2.jpg",
-      "assets/images/kit3.jpg",
-      "assets/images/kit4.jpg",
-      "assets/images/kit5.jpg",
-      "assets/images/kit6.jpg",
-      "assets/images/kit7.jpg",
+
+    final List<Item> items = [
+      Item(price: 12.99, imgPath: "assets/images/secondcat.jpg"),
+      Item(price: 12.99, imgPath: "assets/images/kit1.jpg"),
+      Item(price: 12.99, imgPath: "assets/images/kit2.jpg"),
+      Item(price: 12.99, imgPath: "assets/images/kit3.jpg"),
+      Item(price: 12.99, imgPath: "assets/images/kit5.jpg"),
+      Item(price: 12.99, imgPath: "assets/images/kit4.jpg"),
+      Item(price: 12.99, imgPath: "assets/images/kit6.jpg"),
+      Item(price: 12.99, imgPath: "assets/images/kit7.jpg"),
     ];
 
     return Scaffold(
@@ -108,7 +111,7 @@ class HomeLayout extends StatelessWidget {
                 childAspectRatio: 3 / 2,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 33),
-            itemCount: 8,
+            itemCount: items.length,
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(
                 onTap: () {},
@@ -119,8 +122,8 @@ class HomeLayout extends StatelessWidget {
                         color: Colors.black,
                         onPressed: () {},
                         icon:const Icon(Icons.add)),
-                    leading: const Text(
-                      "\$12.99",
+                    leading: Text(
+                      "${items[index].price}",
                     ),
                     title: const Text(
                       "Cat",
@@ -135,7 +138,7 @@ class HomeLayout extends StatelessWidget {
                       left: 0,
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(55),
-                          child: Image.asset(images[index])),
+                          child: Image.asset(items[index].imgPath)),
                     ),
                   ]),
                 ),
