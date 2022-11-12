@@ -1,3 +1,4 @@
+import 'package:e_commerce/screens/details_screeen.dart';
 import 'package:flutter/material.dart';
 
 import '../models/item_model_cat.dart';
@@ -8,17 +9,6 @@ class HomeLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-
-    final List<Item> items = [
-      Item(price: 12.99, imgPath: "assets/images/secondcat.jpg"),
-      Item(price: 12.99, imgPath: "assets/images/kit1.jpg"),
-      Item(price: 12.99, imgPath: "assets/images/kit2.jpg"),
-      Item(price: 12.99, imgPath: "assets/images/kit3.jpg"),
-      Item(price: 12.99, imgPath: "assets/images/kit5.jpg"),
-      Item(price: 12.99, imgPath: "assets/images/kit4.jpg"),
-      Item(price: 12.99, imgPath: "assets/images/kit6.jpg"),
-      Item(price: 12.99, imgPath: "assets/images/kit7.jpg"),
-    ];
 
     return Scaffold(
       drawer: Drawer(
@@ -104,9 +94,9 @@ class HomeLayout extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(13.0),
+        padding:  EdgeInsets.all(13.0),
         child: GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 3 / 2,
                 crossAxisSpacing: 10,
@@ -114,7 +104,17 @@ class HomeLayout extends StatelessWidget {
             itemCount: items.length,
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(
-                onTap: () {},
+                onTap: ()
+                {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetailsScreen(
+                          product: items[index]
+                      ),
+                    ),
+                  );
+                },
                 child: GridTile(
                   footer: GridTileBar(
                     backgroundColor: Colors.grey.withOpacity(0.6),

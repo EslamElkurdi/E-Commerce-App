@@ -1,8 +1,13 @@
+import 'package:e_commerce/models/item_model_cat.dart';
 import 'package:e_commerce/shared/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 class DetailsScreen extends StatefulWidget {
-  const DetailsScreen({super.key});
+
+
+   Item product;
+
+   DetailsScreen({super.key,  required this.product});
 
   @override
   State<DetailsScreen> createState() => _DetailsScreenState();
@@ -40,11 +45,11 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     ),
                   ],
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(right: 12),
+                 Padding(
+                  padding: const EdgeInsets.only(right: 12),
                   child: Text(
-                    "\$ 13",
-                    style: TextStyle(fontSize: 18),
+                    "\$ ${widget.product.price}",
+                    style: const TextStyle(fontSize: 18),
                   ),
                 ),
               ],
@@ -56,7 +61,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Image.asset("assets/images/kit5.jpg"),
+              Image.asset(widget.product.imgPath),
               const SizedBox(
                 height: 11,
               ),
