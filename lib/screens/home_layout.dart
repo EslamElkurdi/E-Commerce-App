@@ -1,6 +1,7 @@
 import 'package:e_commerce/models/item_model_cat.dart';
 import 'package:e_commerce/provider/cart.dart';
 import 'package:e_commerce/screens/details_screeen.dart';
+import 'package:e_commerce/shared/app_bar/app_bar.dart';
 import 'package:e_commerce/shared/colors/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -66,42 +67,8 @@ class HomeLayout extends StatelessWidget {
         ),
       ),
         appBar: AppBar(
-          actions: [
-            Consumer<Cart>(builder: ((context, classInstancee, child) {
-              return Row(
-                children: [
-                  Stack(
-                    children: [
-                      Positioned(
-                        bottom: 24,
-                        child: Container(
-                            padding: const EdgeInsets.all(5),
-                            decoration: const BoxDecoration(
-                                color: Color.fromARGB(211, 164, 255, 193),
-                                shape: BoxShape.circle),
-                            child: Text(
-                              "${classInstancee.selectedProducts.length}",
-                              style: const TextStyle(
-                                  fontSize: 16,
-                                  color: Color.fromARGB(255, 0, 0, 0)),
-                            )),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.add_shopping_cart),
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 12),
-                    child: Text(
-                      "\$ ${classInstancee.price}",
-                      style: const TextStyle(fontSize: 18),
-                    ),
-                  ),
-                ],
-              );
-            })),
+          actions:const [
+            ProductsAndPrice(),
           ],
           backgroundColor: appbarGreen,
           title: const Text("Home"),
