@@ -13,7 +13,6 @@ class HomeLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-
     return Scaffold(
       drawer: Drawer(
         child: Column(
@@ -38,7 +37,7 @@ class HomeLayout extends StatelessWidget {
                   currentAccountPictureSize: Size.square(99),
                   currentAccountPicture: CircleAvatar(
                       radius: 55,
-                      backgroundImage: AssetImage("assets/images/eslam.jpg")),
+                      backgroundImage: AssetImage("assets/images/kit1.jpg")),
                 ),
                 ListTile(
                     title: const Text("Home"),
